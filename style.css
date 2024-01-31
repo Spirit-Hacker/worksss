@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Freight Big Pro";
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+/* Main wrapper */
+
+#main{
+    background-color: #000;
+}
+
+/* Loader */
+
+#loader{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99;
+    /* display: none; */
+}
+#loader h1{
+    font-size: 6.8vw;
+    line-height: 5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+    z-index: 9;
+}
+#loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+#yellow1{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 8;
+}
+#yellow2{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 7;
+}
+
+/* Navbar */
+
+#nav{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 30px 50px;
+}
+#nav svg path{
+    fill: #000;
+}
+
+/* Page 1 */
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#page1 h1{
+    font-size: 6.8vw;
+    line-height: 5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+}
+
+/* Page 2 */
+
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+.elem{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+.elem h2{
+    position: relative;
+    font-weight: 100;
+    font-size: 6.8vw;
+    text-transform: uppercase;
+    z-index: 2;
+    line-height: 5vw;
+    transition: all ease 0.2s;
+}
+.elem .blur{
+    position: absolute;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(to right, #f5e31bf5, #F5E41B, #f5e31bf5);
+    box-shadow: 10px 0px 20px 20px #F5E41B, -10px 0px 20px 20px #F5E41B;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+}
+.elem .moving{
+    position: absolute;
+    background-color: #F5E41B;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    padding: 5px 0;
+    top: 50%;
+    transform: translate(0, -45%) scaleY(0);
+    transition: all ease 0.3s;
+    transition-delay: 0.1s;
+}
+.elem .moving .moving-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.elem .moving .moving-in h5{
+    color: #000;
+    display: inline-block;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-right: 35px;
+    font-weight: 500;
+    transition: all ease 0.3s;
+    transition-delay: 0.1s;
+    opacity: 0;
+}
+.elem:hover .moving{
+    transform: translate(0, -45%) scaleY(1);
+}
+.elem:hover .moving .moving-in h5{
+    opacity: 1;
+}
+.elem:hover h2{
+    font-style: italic;
+}
+
+/* moving animation */
+@keyframes moving{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* Page 3 */
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
